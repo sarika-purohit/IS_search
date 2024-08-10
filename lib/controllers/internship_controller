@@ -1,0 +1,57 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:internshala_trial/models/internship.dart';
+
+class InternshipController {
+  final String apiUrl = 'https://internshala.com/flutter_hiring/search';
+
+  Future<List<Internship>> fetchInternships() async {
+    try {
+      final response = await http.get(Uri.parse(apiUrl));
+
+      if (response.statusCode == 200) {
+        List<dynamic> internshipsJson = json.decode(response.body);
+
+        // Handle cases where the response might not be a list of internships
+        if (internshipsJson is List) {
+          List<Internship> internships = internshipsJson
+              .map<Internship>((json) => Internship.fromJson(json))
+              .toList();
+          return internships;
+        } else {
+          // Handle unexpected response structure
+          return _fetchStaticInternships();
+        }
+      } else {
+        return _fetchStaticInternships();
+      }
+    } catch (e) {
+      return _fetchStaticInternships();
+    }
+  }
+
+  List<Internship> _fetchStaticInternships() {
+    return [
+      Internship(
+        title: 'Business Development (Sales)',
+        companyName: 'Prosync Infotech Private Limited',
+        location: 'Delhi',
+        duration: '4 Months',
+        salary: '₹10,000/month',
+        type: 'Internship',
+        isActivelyHiring: true,
+        datePosted: '2 weeks ago',
+      ),
+      Internship(
+        title: 'UI/UX Design',
+        companyName: 'Nextfly Technologies Private Limited',
+        location: 'Gurgaon',
+        duration: '4 Months',
+        salary: '₹8,000-₹10,000/month',
+        type: 'Internship',
+        isActivelyHiring: true,
+        datePosted: '2 weeks ago',
+      ),
+    ];
+  }
+}
