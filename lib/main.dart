@@ -1,10 +1,7 @@
 ///////morning one
 
 import 'package:flutter/material.dart';
-import 'package:internshala_trial/controllers/internship_controller';
-import 'package:internshala_trial/views/filter_page.dart';
-import 'package:provider/provider.dart';
-import 'views/splash_screen.dart';
+import 'package:internshala_trial/views/splash_screen.dart';
 import 'views/search_page.dart';
 import 'package:internshala_trial/views/home_page.dart';
 
@@ -26,9 +23,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => MyHomePage(),
-        // '/MyHomePage': (context) => MyHomePage(),
-        '/searchPage': (context) => SearchPage(),
+        '/': (context) => SplashScreen(),
+        '/MyHomePage': (context) => MyHomePage(),
+        
+        //'/searchPage': (context) => SearchPage(),
       },
     );
   }

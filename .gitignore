@@ -41,3 +41,18 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ---------------…or create a new repository on the command line------------
+#echo "# IS_search" >> README.md
+# git init
+# git add README.md
+# git commit -m "first commit"
+# git branch -M main
+# git remote add origin https://github.com/sarika-purohit/IS_search.git
+# git push -u origin main
+
+
+# ----------------------…or push an existing repository from the command line------------
+# git remote add origin https://github.com/sarika-purohit/IS_search.git
+# git branch -M main
+# git push -u origin main

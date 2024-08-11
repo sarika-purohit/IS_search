@@ -26,7 +26,7 @@ class _Splashviewstate extends State<SplashScreen>
     //   curve: Curves.easeInOut,
     // ));
 
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 3), () {
       // Navigate to the search page after the animation
       Navigator.of(context).pushReplacementNamed('/MyHomePage');
     });
