@@ -1,8 +1,8 @@
 ///////morning one
 
 import 'package:flutter/material.dart';
+import 'package:internshala_trial/views/search_page.dart';
 import 'package:internshala_trial/views/splash_screen.dart';
-import 'views/search_page.dart';
 import 'package:internshala_trial/views/home_page.dart';
 
 void main() {
@@ -13,9 +13,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // return ChangeNotifierProvider(
-      // create: (context) => InternshipController()..fetchInternships(),
-
       debugShowCheckedModeBanner: false,
       title: 'Internshala Search',
       theme: ThemeData(
@@ -23,10 +20,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => SplashScreen(),
+        '/': (context) => InternshipPage(),
         '/MyHomePage': (context) => MyHomePage(),
-        
-        //'/searchPage': (context) => SearchPage(),
       },
     );
   }

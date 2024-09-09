@@ -1,9 +1,7 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:internshala_trial/models/internship.dart';
-import 'package:internshala_trial/views/search_page.dart';
 import 'package:internshala_trial/widgets/internship_card.dart';
 
 class SearchPage extends StatefulWidget {
